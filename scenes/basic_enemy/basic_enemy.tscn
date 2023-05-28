@@ -1,7 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://b8ihexw8m50le"]
+[gd_scene load_steps=5 format=3 uid="uid://b8ihexw8m50le"]
 
 [ext_resource type="Texture2D" uid="uid://c7xpjgpxigcj5" path="res://scenes/basic_enemy/basic_enemy.png" id="1_1enor"]
 [ext_resource type="Script" path="res://scenes/basic_enemy/basic_enemy.gd" id="1_g40s1"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_upoqf"]
+radius = 11.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_4y5cw"]
 radius = 6.0
@@ -10,6 +13,15 @@ radius = 6.0
 collision_layer = 0
 script = ExtResource("1_g40s1")
 
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, -9)
+shape = SubResource("CircleShape2D_upoqf")
+debug_color = Color(0.419608, 0.603922, 0, 0.419608)
+
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_1enor")
 offset = Vector2(2.08165e-12, -8)
@@ -17,3 +29,6 @@ offset = Vector2(2.08165e-12, -8)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -9)
 shape = SubResource("CircleShape2D_4y5cw")
+debug_color = Color(0.988235, 0, 0.32549, 0.419608)
+
+[connection signal="area_entered" from="Area2D" to="." method="on_area_entered"]

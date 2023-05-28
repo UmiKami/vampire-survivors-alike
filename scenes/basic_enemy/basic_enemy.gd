@@ -21,3 +21,9 @@ func get_direction_to_player():
 		return (player_node.global_position - global_position).normalized()
 		
 	return Vector2.ZERO
+
+
+
+# when an entity in the enemy layer enters the area, we remove the current enemy
+func on_area_entered(other_area: Area2D):
+	queue_free()
