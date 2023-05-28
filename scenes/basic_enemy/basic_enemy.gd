@@ -13,6 +13,7 @@ func _process(delta):
 	velocity = direction * MAX_SPEED
 	move_and_slide()
 	
+	
 func get_direction_to_player():
 	var player_node = get_tree().get_first_node_in_group("player") as Node2D
 	
