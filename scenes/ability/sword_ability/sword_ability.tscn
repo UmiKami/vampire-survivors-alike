@@ -1,20 +1,6 @@
-[gd_scene load_steps=6 format=3 uid="uid://bf1utpd5kr0h0"]
+[gd_scene load_steps=5 format=3 uid="uid://bf1utpd5kr0h0"]
 
 [ext_resource type="Texture2D" uid="uid://c0q8po4wfronp" path="res://scenes/ability/sword_ability/sword.png" id="1_lnnes"]
-
-[sub_resource type="GDScript" id="GDScript_734jg"]
-script/source = "extends Node2D
-
-
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	$AnimationPlayer.play(\"swing\")
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
-"
 
 [sub_resource type="Animation" id="Animation_8d74f"]
 resource_name = "swing"
@@ -106,7 +92,6 @@ _data = {
 }
 
 [node name="SwordAbility" type="Node2D"]
-script = SubResource("GDScript_734jg")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 autoplay = "RESET"
