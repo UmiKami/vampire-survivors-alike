@@ -10,8 +10,7 @@ func _ready():
 func _on_timer_timeout():
 	var player = get_tree().get_first_node_in_group("player") as Node2D
 	if player == null:
-		return
-	
+		return		
 	
 	var sword_instance = sword_ability.instantiate() as Node2D
 	player.get_parent().add_child(sword_instance)
