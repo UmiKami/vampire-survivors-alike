@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://3jpocvcqie2o"]
+[gd_scene load_steps=5 format=3 uid="uid://3jpocvcqie2o"]
 
 [ext_resource type="Script" path="res://scenes/player/Player.gd" id="1_135xm"]
+[ext_resource type="PackedScene" uid="uid://bkl6vht2e1h5p" path="res://scenes/ability/sword_ability_controller/sword_ability_controller.tscn" id="2_0aj8n"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_40oi6"]
 load_path = "res://.godot/imported/player.png-d340f81abf0a3162ec6e69b8e169a012.ctex"
@@ -11,6 +12,10 @@ radius = 5.0
 [node name="Player" type="CharacterBody2D" groups=["player"]]
 collision_layer = 0
 script = ExtResource("1_135xm")
+
+[node name="AbilityManager" type="Node" parent="."]
+
+[node name="SwordAbilityController" parent="AbilityManager" instance=ExtResource("2_0aj8n")]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(0, -4)
