@@ -32,7 +32,7 @@ func _on_timer_timeout():
 	var sword_instance = sword_ability.instantiate() as Node2D
 	player.get_parent().add_child(sword_instance)
 	sword_instance.global_position = enemies[0].global_position
-	sword_instance.global_position += Vector2.RIGHT.rotated(randf_range(0, TAU)) * 4
+	sword_instance.global_position += Vector2.RIGHT.rotated(randf_range(0, TAU)) * 4 # spawn position of sword in a radious of 4 pixels around the enemy | TAU = 360deg or 2*PI
 	
 	# position that we want to point at comes first | enemy <- sword instance
 	var enemy_direction = enemies[0].global_position - sword_instance.global_position
