@@ -12,7 +12,7 @@ func _ready():
 func _process(delta):
 	acquire_target()
 
-	global_position = global_position.lerp(target_position, 1.0 - exp(-delta * 20)) 
+	global_position = global_position.lerp(target_position, 1 - exp(-delta * 20))
 	
 	if !is_moving_diagonal():
 		self.global_position = self.global_position.round()
